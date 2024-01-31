@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap");
+
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  border: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* VARIABLES */
+:root {
+  /* COLORS */
+  --WHITE: hsl(0, 0%, 100%);
+  --LIGHT-PINK: hsl(275, 100%, 97%);
+  --GRAYISH-PURPLE: hsl(292, 16%, 49%);
+  --DARK-PURPLE: hsl(292, 42%, 14%);
+
+  /* FONTS */
+  --FN: "Work Sans", sans-serif;
+  --FN-WH-REG: 400;
+  --FN-WH-SM-BALD: 600;
+  --FN-WH-BALD: 700;
+}
+
+/* GENERAL STYLES */
+html {
+  font-size: 16px;
+  font-family: var(--FN);
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./assets/images/background-pattern-mobile.svg");
+  background-repeat: repeat-x;
+  background-color: var(--LIGHT-PINK);
+  color: var(--DARK-PURPLE);
+}
+
+main {
+  width: 90%;
+  background-color: var(--WHITE);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.15);
+}
+
+
+li:first-child {
+  padding-top: 0;
+}
+
+li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* BLOCKS */
+h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
+h1 > img {
+  height: 1em;
+}
+
+.FAQs__item{
+    background-color: var(--WHITE);
+    text-align: left;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.05);
+}
+
+.FAQs__item:last-child{
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.FAQs__answer {
+  overflow: hidden;
+  max-height: 0;
+  color:var(--DARK-PURPLE);
+  transition: max-height 0.3s;
+  opacity: 60%;
+/*   padding-top: 1rem; */
+}
+
+.FAQs__question {
+  font-weight: var(--FN-WH-BALD);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.FAQs__item:hover, .FAQs__item:focus { 
+    color: hsl(292, 100%, 40%);
+}
+
+@media screen and (min-width: 376px) {
+  body {
+    background-image: url("./assets/images/background-pattern-desktop.svg");
+  }
+
+  .FAQs{
+    max-width: 600px;
+  }
+}
